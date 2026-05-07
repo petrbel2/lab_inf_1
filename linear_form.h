@@ -9,8 +9,8 @@ typedef struct linear_form {
     void* data;
     int size;
 } linear_form;
-//вычисление линейной формы
-void calculate(linear_form base);
+//вычисление линейной формы, возвращает ссылку на результат
+void* calculate(linear_form base);
 //сложение линейных формрезультат перезаписывает первую форму)
 void addition(linear_form form1, linear_form form2);
 //вычитание линейных форм(результат перезаписывает первую форму)

@@ -1,37 +1,73 @@
 #include "tests.h"
 
 void test_real() {
-    printf("%s", "Created 2 linear forms(real numbers), size 4, filled with 1\n");
     linear_form f_1 = create_linear_form(get_real_field, 4);
     linear_form f_2 = create_linear_form(get_real_field, 4);
+    int checker = 1;
     addition(f_1, f_2);
-    printf("%s", "Form addition\n");
-    calculate(f_1);
+    for (int i = 0; i < 4; i++) {
+        if (((float*)f_1.data)[i] != 2.0) {
+            checker = 0;
+        }
+    }
+    if (checker == 0) {
+        printf("%s", "Addition failture\n");
+    }
+    else {
+        printf("%s", "Addition test successfull\n");
+    }
+    void* result = (float*)calculate(f_1);
+    if (((float*)result)[0] != 20.0) {
+        printf("%s", "Form calculation failture\n");
+    }
+    else {
+        printf("%s", "Calculation test successfull\n");
+    }
+    free(result);
     free(f_1.data);
     free(f_2.data);
 }
 
 void test_complex() {
-    printf("%s", "Created 2 linear forms(complex numbers), size 4, filled with 2 + 2i and 1 + 1i\n");
     linear_form f_3 = create_linear_form(get_complex_field, 4);
     linear_form f_4 = create_linear_form(get_complex_field, 4);
+    int checker = 1;
+    multiplication(f_3, 2.0);
+    for (int i = 0; i < 8; i++) {
+        if (((float*)f_3.data)[i] != 2.0) {
+            checker = 0;
+        }
+    }
+    if (checker == 0) {
+        printf("%s", "Multiplication failture\n");
+    }
+    else {
+        printf("%s", "Multiplication test successfull\n");
+    }
+    checker = 1;
     subtraction(f_3, f_4);
-    printf("%s", "Form subtraction\n");
-    calculate(f_3);
+    for (int i = 0; i < 8; i++) {
+        if (((float*)f_3.data)[i] != 1.0) {
+            checker = 0;
+        }
+    }
+    if (checker == 0) {
+        printf("%s", "Substraction failture\n");
+    }
+    else {
+        printf("%s", "Subtraction test successfull\n");
+    }
     print_form(f_4);
     free(f_3.data);
     free(f_4.data);
 }
 
 void test_errors() {
-    printf("%s", "Created 2 linear forms(real numbers), sizes 4 and 3, filled with 1\n");
+    printf("%s", "Testing errors\n");
     linear_form f_1 = create_linear_form(get_real_field, 4);
     linear_form f_2 = create_linear_form(get_real_field, 3);
-    printf("%s", "Trying to sum the forms\n");
     addition(f_1, f_2);
-    printf("%s", "Created linear form(complex numbers), size 4, filled with 1 + i\n");
     linear_form f_3 = create_linear_form(get_complex_field, 4);
-    printf("%s", "Trying to sum the forms(real and complex)\n");
     addition(f_3, f_2);
     free(f_1.data);
     free(f_2.data);

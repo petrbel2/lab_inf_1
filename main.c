@@ -39,7 +39,7 @@ int main(void) {
 
         switch (choice) {
             case 1:
-                calculate(formA);
+                free(calculate(formA));
                 break;
             case 2:
                 addition(formA, formB);
@@ -66,7 +66,7 @@ int main(void) {
                 subtraction(formB, formA);
                 break;
             case 8:
-                calculate(formB);
+                free(calculate(formB));
                 break;
             case 9:
                 addition(formB, formA);
