@@ -8,7 +8,7 @@ void addit_c(void* elem1, void* elem2);
 
 void subtr_c(void* form1, void* form2);
 
-void calc_c(void* answer, void* elem, float coef);
+void calc_c(void* answer, void* elem, float coef, int* flag);
 
 void multip_c(void* form, float multiplier);
 

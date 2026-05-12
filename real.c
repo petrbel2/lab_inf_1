@@ -17,7 +17,11 @@ void subtr_r(void* elem1, void* elem2) {
     data1[0] = data1[0] - data2[0];
 }
 
-void calc_r(void* answer, void* elem, float coef) {
+void calc_r(void* answer, void* elem, float coef, int* flag) {
+    if (*flag == 0) {
+        ((float*)answer)[0] = 0;
+        *flag = 1;
+    }
     float* data1 = (float*)elem;
     ((float*)answer)[0] += data1[0] * coef;
 }
@@ -38,5 +42,4 @@ void fill_r(void* form) {
     float value;
     scanf("%f", &value);
     data[0] = value;
-    printf("%s", "\n");
 }

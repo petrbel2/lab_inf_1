@@ -89,7 +89,7 @@ int main(void) {
                 set_linear_form(formA);
                 break;
             case 12:
-                set_linear_form(formA);
+                set_linear_form(formB);
                 break;
             default:
                 printf("Wrong number.\n");

@@ -11,7 +11,7 @@ void addit_r(void* form1, void* form2);
 
 void subtr_r(void* form1, void* form2);
 
-void calc_r(void* answer, void* elem, float coef);
+void calc_r(void* answer, void* elem, float coef, int* flag);
 
 void multip_r(void* form, float multiplier);
 

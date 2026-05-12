@@ -59,9 +59,10 @@ linear_form create_linear_form(FieldInfo* (*of_field)(), int size) {
 
 void* calculate(linear_form base) {
     void* answer = malloc(base.size * base.fieldinfo->type_size);
+    int flag = 0;
     float coef = 1;
     for (int i = 0; i < base.size; i++) {
-        base.fieldinfo->calc(answer, (char*)base.data + i * base.fieldinfo->type_size, coef);
+        base.fieldinfo->calc(answer, (char*)base.data + i * base.fieldinfo->type_size, coef, &flag);
         coef += 1;
     }
     printf("%s", "Linear form calculation: ");

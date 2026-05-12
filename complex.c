@@ -8,7 +8,12 @@ void create_c(void* data) {
     massiv[1] = 1.0;
 }
 
-void calc_c(void* answer, void* elem, float coef) {
+void calc_c(void* answer, void* elem, float coef, int* flag) {
+    if (*flag == 0) {
+        ((float*)answer)[0] = 0;
+        ((float*)answer)[1] = 0;
+        *flag = 1;
+    }
     float* data1 = (float*)elem;
     ((float*)answer)[0] += data1[0] * coef;
     ((float*)answer)[1] += data1[1] * coef;
@@ -45,7 +50,6 @@ void print_c(void* form) {
 void fill_c(void* form) {
     float* data = (float*)form;
     scanf("%f", &data[0]);
-    printf("%s", "\n");
     scanf("%f", &data[1]);
     printf("%s", "\n");
 }
