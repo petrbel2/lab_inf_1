@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "linear_form.h"
 #include "tests.h"
 
 void test_real() {

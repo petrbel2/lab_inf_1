@@ -1,8 +1,6 @@
 #ifndef COMPLEX_H
 #define COMPLEX_H
 
-#include <stdio.h>
-#include <stdlib.h>
 //функции для работы с комплексными числами. Описания работы этих функций(для произвольного типа) записаны в field.h
 void create_c(void* data);
 

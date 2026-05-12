@@ -1,4 +1,7 @@
-#include "tests.c"
+#include <stdio.h>
+#include <stdlib.h>
+#include "linear_form.h"
+#include "tests.h"
 
 static void clear_input_buffer(void) {
     int c;

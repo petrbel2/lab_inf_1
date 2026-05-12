@@ -1,7 +1,6 @@
 #ifndef LINEARFORM_H
 #define LINEARFORM_H
 
-#include <stddef.h>
 #include "field.h"
 
 typedef struct linear_form {

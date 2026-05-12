@@ -1,7 +1,6 @@
 #ifndef FIELD_H
 #define FIELD_H
 
-
 #include <stddef.h>
 
 typedef struct FieldInfo {
@@ -19,10 +18,6 @@ typedef struct FieldInfo {
     //умножение значения произвольного типа на коэффициент(результат перезаписывает изначальное значение)
     void (*multip) (void*, float);
 } FieldInfo;
-
-FieldInfo real_field;
-
-FieldInfo complex_field;
 
 FieldInfo* get_real_field();
 
