@@ -5,7 +5,7 @@
 
 typedef struct FieldInfo {
     size_t type_size;
-    //создание и запись значения произвольного типа
+    //создание значения(изначально записывается значение по умолчанию) произвольного типа
     void (*create)(void*);
     //вывод значения произвольного типа
     void (*print)(void*);
@@ -17,6 +17,8 @@ typedef struct FieldInfo {
     void (*subtr) (void*, void*);
     //умножение значения произвольного типа на коэффициент(результат перезаписывает изначальное значение)
     void (*multip) (void*, float);
+    //запись пользовательского значения
+    void (*fill) (void*);
 } FieldInfo;
 
 FieldInfo* get_real_field();

@@ -69,3 +69,9 @@ void* calculate(linear_form base) {
     printf("%s", "\n");
     return answer;
 }
+
+void set_linear_form(linear_form base) {
+    for (int i = 0; i < base.size; i++) {
+        base.fieldinfo->fill((char*)base.data + i * base.fieldinfo->type_size);
+    }
+}

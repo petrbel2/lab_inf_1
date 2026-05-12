@@ -18,7 +18,9 @@ void subtraction(linear_form form1, linear_form form2);
 void multiplication(linear_form form1, float multiplier);
 //вывод линейной формы
 void print_form(linear_form form);
-//создание линейной формы
+//создание линейной формы(заполненной 1)
 linear_form create_linear_form(FieldInfo* (*of_field)(), int size);
+//заполнение линейной формы произвольными значениями(перезаписывает форму)
+void set_linear_form(linear_form base);
 
 #endif

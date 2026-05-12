@@ -41,3 +41,11 @@ void print_c(void* form) {
     printf("%f", data[1]);
     printf("%s", "i\n");
 }
+
+void fill_c(void* form) {
+    float* data = (float*)form;
+    scanf("%f", &data[0]);
+    printf("%s", "\n");
+    scanf("%f", &data[1]);
+    printf("%s", "\n");
+}

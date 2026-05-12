@@ -17,4 +17,6 @@ void multip_r(void* form, float multiplier);
 
 void print_r(void* form);
 
+void fill_r(void* form);
+
 #endif

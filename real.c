@@ -32,3 +32,11 @@ void print_r(void* form) {
     printf("%f", data[0]);
     printf("%s", "   ");
 }
+
+void fill_r(void* form) {
+    float* data = (float*)form;
+    float value;
+    scanf("%f", &value);
+    data[0] = value;
+    printf("%s", "\n");
+}

@@ -28,6 +28,8 @@ int main(void) {
     printf(" [8] calculate form B\n");
     printf(" [9] Addition form B += form A\n");
     printf(" [10] multiply form B\n");
+    printf(" [11] change values for form A\n");
+    printf(" [12] change values for form B\n");
     printf(" [0] Exit\n");
     printf("----------------------------\n");
     while (1) {
@@ -82,6 +84,12 @@ int main(void) {
                     printf("Ошибка: некорректное число.\n");
                 }
                 clear_input_buffer();
+                break;
+            case 11:
+                set_linear_form(formA);
+                break;
+            case 12:
+                set_linear_form(formA);
                 break;
             default:
                 printf("Wrong number.\n");
